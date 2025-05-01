@@ -1,0 +1,140 @@
+.plans-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+.plans-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.plans-header h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #30404D;
+    margin-bottom: 16px;
+}
+
+.plans-header p {
+    font-size: 16px;
+    color: #30404D;
+    width: 550px;
+    margin: 0 auto;
+    line-height: 1.5;
+
+}
+
+.plans-cards {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.plan-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.plan-card h2 {
+    color: #30404D;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.plan-description {
+    color: #30404D;
+    font-size: 16px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+    min-height: auto;
+}
+
+.price-container {
+    margin: 30px 0;
+}
+
+.price-symbol {
+    color: #3A7ABD;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.price-value {
+    color: #3A7ABD;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.price-period {
+    color: #98A8B3;
+    font-size: 16px;
+    margin-left: 5px;
+}
+
+.features-list h3 {
+    color: #30404D;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.features-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+}
+
+.features-list li {
+    color: #30404D;
+    font-size: 16px;
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+}
+
+.checkmark {
+    color: #3A7ABD;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.signup-button {
+    width: 100%;
+    padding: 16px;
+    background-color: white;
+    color: #244779;
+    border: 1px solid #e0e0e0;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.signup-button:hover {
+    background-color: #f0f0f0;
+}
+
+.plans-cards .plan-card:nth-child(1) .signup-button {
+    margin-top: 77px;
+}
+
+/* @media (max-width: 768px) {
+    .plans-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .plan-card {
+        margin-bottom: 30px;
+    }
+} */

@@ -1,0 +1,166 @@
+.chat-details {
+    width: 32%;
+    font-family: 'Inter', sans-serif;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    /* border: 1px solid black */
+}
+
+.chat-details .chat-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.chat-details .chat-header .user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgb(200, 199, 199);
+}
+
+.chat-title {
+    font-weight: bold;
+    font-size: 18px;
+    color: #939598;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.section-title {
+    color: #184E7F;
+    margin-bottom: 10px;
+}
+
+.input-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #fff;
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.dropdown-box img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid rgb(200, 199, 199);
+}
+
+.input-box input,
+.dropdown-box select {
+    border: none;
+    ;
+    outline: none;
+    flex: 1;
+    font-size: 14px;
+    color: #808080;
+    background: transparent;
+}
+
+.dropdown-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.dropdown-selected {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    background-color: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.profile-img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.user-name {
+    color: #4a5568;
+}
+
+.chevron {
+    color: #718096;
+    transition: transform 0.2s ease;
+}
+
+.chevron-open {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    width: 100%;
+    margin-top: 4px;
+    background-color: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    overflow: hidden;
+}
+
+.dropdown-menu img {
+    margin: 0px 10px;
+}
+
+.dropdown-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 12px;
+    cursor: pointer;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.dropdown-item span {
+    padding-top: 5px;
+    margin-left: 10px;
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.dropdown-item:hover {
+    background-color: #f7fafc;
+}
+
+.status-dropdown {
+    position: relative;
+    top: 20px;
+}
+
+.status-info,
+.user-info {
+    margin-left: 10px;
+    width: 90%;
+    gap: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.section .status-info img,
+.section .section-title .dropdown-container .dropdown-selected .user-info img {
+    width: 30px;
+    height: 30px;
+}

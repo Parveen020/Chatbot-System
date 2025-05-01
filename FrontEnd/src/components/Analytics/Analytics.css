@@ -1,0 +1,111 @@
+.analytics-container {
+    width: 100%;
+    height: 100%;
+    padding: 24px 24px 0px 24px;
+    font-family: 'Inter', sans-serif;
+}
+
+.analytics-container h1 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #6A6B70;
+}
+
+.section {
+    margin-bottom: 15px;
+}
+
+.section-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #00D907;
+}
+
+.final-value {
+    margin-bottom: 0px;
+}
+
+.total-chats {
+    font-weight: 550px;
+    color: #333;
+}
+
+p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.chart-container {
+    position: relative;
+    height: 300px;
+    width: 50%;
+}
+
+.chart-container img {
+    width: 100%;
+    height: 100%;
+}
+
+.flex-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.section-content {
+    width: 50%;
+}
+
+.metric-value {
+    position: relative;
+    display: flex;
+    align-items: center;
+    left: -650px;
+    gap: 5px;
+}
+
+.value {
+    font-size: 30px;
+    font-weight: bold;
+    color: #00D907;
+}
+
+.unit {
+    color: #00D907;
+    font-size: 25px;
+}
+
+.progress-circle {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    left: -640px;
+}
+
+.para2 {
+    width: 670px;
+}
+
+.progress-value {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.total-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00D907;
+    position: relative;
+    left: -630px;
+}

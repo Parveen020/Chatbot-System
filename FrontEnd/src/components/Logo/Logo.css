@@ -1,0 +1,26 @@
+.box {
+    width: 200px;
+    height: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+}
+
+.logo-box {
+    gap: 10px;
+    margin-left: 110px
+}
+
+.logo-box img {
+    cursor: pointer;
+}
+
+.logo-box .logo-title {
+    font-size: 35px;
+    font-weight: 550;
+    font-family: 'Inter', sans-serif;
+    color: #184E7F;
+    cursor: pointer;
+    padding-top: 15px;
+}

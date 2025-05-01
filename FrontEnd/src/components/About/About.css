@@ -1,0 +1,273 @@
+.about {
+    width: 100%;
+    margin: 0 auto;
+    padding: 80px;
+    font-family: 'Barlow', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.slogan-box {
+    width: 63%;
+    text-align: center;
+    margin: 40px 0px;
+}
+
+.slogan-box h1 {
+    font-size: 40px;
+    color: #30404D;
+    margin-bottom: 20px;
+}
+
+.slogan-box p {
+    font-size: 18px;
+    color: #30404D;
+    width: 750px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.info-box {
+    width: 90%;
+    height: 500px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.left-info-box {
+    width: 43%;
+    padding: 60px 20px;
+}
+
+.left-info-box h2 {
+    font-size: 22px;
+    color: #30404D;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.left-info-box>p {
+    font-size: 16px;
+    color: #30404D;
+    margin-bottom: 30px;
+}
+
+.stages .stage {
+    margin-bottom: 40px;
+}
+
+.stages .stage:last-child {
+    margin-bottom: 0;
+}
+
+.stages .stage h3 {
+    font-size: 18px;
+    color: #30404D;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.stages .stage p {
+    font-size: 14px;
+    color: #30404D;
+}
+
+.funnel-visualization {
+    width: 45%;
+    padding-top: 30px;
+    position: relative;
+    margin: 80px auto;
+}
+
+.funnel-container {
+    position: relative;
+    height: 250px;
+    perspective: 600px;
+}
+
+.funnel-layer {
+    position: absolute;
+    width: 80%;
+    left: 0;
+    transform-style: preserve-3d;
+    margin-left: 120px;
+}
+
+.top-layer {
+    height: 120px;
+    background-color: #629DD4;
+    clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
+    top: 0;
+    z-index: 3;
+}
+
+.middle-layer {
+    height: 120px;
+    background-color: #256CB5;
+    clip-path: polygon(10% 0, 90% 0, 85% 100%, 15% 100%);
+    top: 110px;
+    z-index: 2;
+}
+
+.bottom-layer {
+    height: 120px;
+    background-color: #184E7F;
+    clip-path: polygon(20% 0, 80% 0, 75% 100%, 25% 100%);
+    top: 220px;
+    z-index: 1;
+}
+
+.stage-label {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+}
+
+.stage-label span {
+    font-size: 13px;
+    color: #30404D;
+    font-weight: bold;
+    margin-right: 10px;
+    letter-spacing: 1px;
+}
+
+.connector {
+    display: flex;
+    align-items: center;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: #184E7F;
+    border-radius: 50%;
+}
+
+.line {
+    height: 2px;
+    background-color: #184E7F;
+}
+
+.capture-label {
+    top: 60px;
+}
+
+.capture-label .line {
+    width: 70px;
+}
+
+.nurture-label {
+    left: 20px;
+    top: 170px;
+}
+
+.nurture-label .line {
+    width: 100px;
+}
+
+.close-label {
+    left: 55px;
+    top: 280px;
+}
+
+.close-label .line {
+    width: 180px;
+}
+
+.social-circle {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    z-index: 4;
+}
+
+.social-circle span {
+    font-weight: bold;
+}
+
+.facebook {
+    top: -90px;
+    left: 150px;
+}
+
+.facebook span {
+    color: #3b5998;
+    font-size: 24px;
+}
+
+.whatsapp {
+    width: 30px;
+    height: 30px;
+    top: -100px;
+    left: 220px;
+}
+
+.whatsapp span {
+    color: #25D366;
+    font-size: 22px;
+}
+
+.google {
+    width: 50px;
+    height: 50px;
+    top: -60px;
+    left: 250px;
+}
+
+.google span {
+    font-size: 20px;
+}
+
+.messenger {
+    width: 52px;
+    height: 52px;
+    top: -120px;
+    right: 40px;
+}
+
+.messenger span {
+    color: #0084FF;
+    font-size: 22px;
+}
+
+.snapchat {
+    top: -70px;
+    right: 120px;
+}
+
+.snapchat span {
+    color: #FFFC00;
+    text-shadow: 0 0 1px #000;
+    font-size: 22px;
+}
+
+.youtube {
+    width: 35px;
+    height: 35px;
+    top: -35px;
+    right: 20px;
+}
+
+.youtube span {
+    color: #FF0000;
+    font-size: 22px;
+}
+
+.circle-image {
+    width: 100%;
+    height: 100%;
+    margin-top: 5px;
+}

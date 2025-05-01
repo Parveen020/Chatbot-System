@@ -1,0 +1,76 @@
+.warning-box-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 100;
+}
+
+.warning-box {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    width: 90%;
+    max-width: 400px;
+    padding: 20px;
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.warning-message {
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.warning-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.warning-button {
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+    border: none;
+}
+
+.warning-button.cancel {
+    background-color: transparent;
+    color: #6b7280;
+}
+
+.warning-button.cancel:hover {
+    background-color: #f3f4f6;
+}
+
+.warning-button.confirm {
+    background-color: #184E7F;
+    color: white;
+}
+
+.warning-button.confirm:hover {
+    background-color: #184E7F;
+}

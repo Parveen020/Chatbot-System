@@ -1,0 +1,103 @@
+.chatList-container {
+    width: 25%;
+    height: 100%;
+    max-height: 700px;
+    gap: 29px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+}
+
+.chatList-container .heading {
+    width: 100%;
+    height: 40%;
+    padding: 15px;
+}
+
+.chatList-container .heading p {
+    font-size: 25px;
+    color: #6A6B70;
+    text-align: start;
+}
+
+.chatList-container .chatList {
+    width: 100%;
+    height: 60%;
+    min-height: 590px;
+    max-height: 590px;
+    overflow-y: auto;
+    scrollbar-width: none;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 7px;
+    margin-top: -35px;
+}
+
+.chat-heading {
+    width: 95%;
+    border-bottom: 2px solid #aea9a9;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+.chat-heading p {
+    font-size: 16px;
+    line-height: 0.1;
+    color: #888888;
+}
+
+.chatList-container .chatList .single-chat {
+    width: 95%;
+    height: 60px;
+    border-radius: 30px;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 7px;
+}
+
+.chatList-container .chatList .single-chat:hover {
+    background-color: rgb(226, 222, 222);
+}
+
+.chatList-container .chatList .single-chat .chat-img-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgb(200, 199, 199);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chatList-container .chatList .single-chat .chat-img-box img {
+    width: 100%;
+    height: 100%;
+}
+
+.chatList-container .chatList .single-chat .chat-info-box {
+    width: 220px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+.chatList-container .chatList .single-chat .chat-info-box p:nth-child(1) {
+    font-size: 16px;
+    color: #5E9BD5;
+    margin-top: 30px;
+    line-height: 0.1;
+}
+
+.chatList-container .chatList .single-chat .chat-info-box p:nth-child(2) {
+    font-size: 15px;
+    color: #9A9B9D;
+}
