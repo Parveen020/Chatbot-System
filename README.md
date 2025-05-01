@@ -1,7 +1,3 @@
-Certainly! Here's the updated GitHub README with **"All Tickets"**, **"Resolved Tickets"**, and **"Unresolved Tickets"** listed as separate points under features:
-
----
-
 # 🛠️ Ticketing System - MERN Stack
 
 ## 📦 Setup Instructions
