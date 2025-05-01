@@ -1,5 +1,6 @@
 import React from "react";
 import "./WarningBox.css";
+import BackDrop from "../../BackDrop/BackDrop";
 
 const WarningBox = ({ isVisible, onCancel, onConfirm, message }) => {
   if (!isVisible) return null;
@@ -17,6 +18,7 @@ const WarningBox = ({ isVisible, onCancel, onConfirm, message }) => {
           </button>
         </div>
       </div>
+      <BackDrop />
     </div>
   );
 };

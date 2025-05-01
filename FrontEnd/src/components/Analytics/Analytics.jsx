@@ -4,6 +4,7 @@ import "./Analytics.css";
 import { assets } from "../../assets/assets";
 import { AdminContext } from "../../Context/AdminContext";
 import ChartAnalysis from "../ChartAnalysis/ChartAnalysis";
+import BackDrop from "../BackDrop/BackDrop";
 
 const Analytics = () => {
   const {
@@ -91,6 +92,7 @@ const Analytics = () => {
         </div>
         <div className="total-value">{totalTickets} Chats</div>
       </div>
+      <BackDrop />
     </div>
   );
 };

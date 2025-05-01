@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect, useContext } from "react";
 import "./Chatbot.css";
 import { assets } from "../../assets/assets";
 import { AdminContext } from "../../Context/AdminContext";
+import BackDrop from "../BackDrop/BackDrop";
 
 const Chatbot = () => {
   const {
@@ -119,7 +120,6 @@ const Chatbot = () => {
           </div>
         </div>
 
-        {/* Background Color Option */}
         <div className="customization-section">
           <h3>Custom Background Color</h3>
           <div className="color-options">
@@ -156,7 +156,6 @@ const Chatbot = () => {
           </div>
         </div>
 
-        {/* Customize Messages */}
         <div className="customization-section">
           <h3>Customize Messages</h3>
           <div className="message-customization">
@@ -187,7 +186,6 @@ const Chatbot = () => {
           </div>
         </div>
 
-        {/* Introduction Form */}
         <div className="customization-section">
           <div className="chatbot-form">
             <h4>Introduction Yourself</h4>
@@ -219,7 +217,6 @@ const Chatbot = () => {
           </div>
         </div>
 
-        {/* Welcome Message */}
         <div className="customization-section">
           <h3>Welcome Message</h3>
           <div className="welcome-customization">
@@ -236,7 +233,6 @@ const Chatbot = () => {
           </div>
         </div>
 
-        {/* Missed chat timer */}
         <div className="customization-section">
           <h3>Missed chat timer</h3>
           <div className="timer-customization">
@@ -282,6 +278,7 @@ const Chatbot = () => {
           </div>
         </div>
       </div>
+      <BackDrop />
     </div>
   );
 };

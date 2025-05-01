@@ -11,6 +11,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { AdminContext } from "../../Context/AdminContext";
+import BackDrop from "../BackDrop/BackDrop";
 
 const ChartAnalysis = () => {
   const { missedChatsData } = useContext(AdminContext);
@@ -56,6 +57,7 @@ const ChartAnalysis = () => {
           <ReferenceLine x="Week 6" stroke="#000" strokeDasharray="3 3" />
         </LineChart>
       </ResponsiveContainer>
+      <BackDrop />
     </div>
   );
 };

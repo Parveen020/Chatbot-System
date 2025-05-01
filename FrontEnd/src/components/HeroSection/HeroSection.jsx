@@ -3,6 +3,7 @@ import "./HeroSection.css";
 import { assets } from "../../assets/assets";
 import RightBox from "./RightBox/RightBox";
 import HeroChatbot from "./HeroChatbot/HeroChatbot";
+import BackDrop from "../BackDrop/BackDrop";
 
 const HeroSection = () => {
   return (
@@ -36,6 +37,7 @@ const HeroSection = () => {
         <RightBox />
       </div>
       <HeroChatbot />
+      <BackDrop />
     </div>
   );
 };

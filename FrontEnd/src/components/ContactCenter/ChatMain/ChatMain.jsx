@@ -3,6 +3,7 @@ import { assets } from "../../../assets/assets";
 import "./ChatMain.css";
 import { AdminContext } from "../../../Context/AdminContext";
 import ChatWindow from "../../ChatWindow/ChatWindow";
+import BackDrop from "../../BackDrop/BackDrop";
 
 const ChatMain = ({ selectedChat }) => {
   const {
@@ -47,6 +48,7 @@ const ChatMain = ({ selectedChat }) => {
         ></textarea>
         <button onClick={handleSendMessage}>➤</button>
       </div>
+      <BackDrop />
     </div>
   );
 };

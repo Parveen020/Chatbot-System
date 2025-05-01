@@ -3,6 +3,7 @@ import "./HeroChatbot.css";
 import { assets } from "../../../assets/assets";
 import { AdminContext } from "../../../Context/AdminContext";
 import ChatWindow from "../../ChatWindow/ChatWindow";
+import BackDrop from "../../BackDrop/BackDrop";
 
 const HeroChatbot = () => {
   const {
@@ -137,6 +138,7 @@ const HeroChatbot = () => {
           </div>
         </div>
       )}
+      <BackDrop />
     </div>
   );
 };

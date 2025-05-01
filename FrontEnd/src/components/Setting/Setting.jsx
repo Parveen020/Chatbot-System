@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import "./Setting.css";
 import { AdminContext } from "../../Context/AdminContext";
+import BackDrop from "../BackDrop/BackDrop";
 
 const Setting = () => {
   const {
@@ -143,6 +144,7 @@ const Setting = () => {
           </form>
         </div>
       </div>
+      <BackDrop />
     </div>
   );
 };

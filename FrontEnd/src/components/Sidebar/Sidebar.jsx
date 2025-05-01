@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { assets } from "../../assets/assets";
 import { NavLink, useNavigate } from "react-router-dom";
 import "./Sidebar.css";
+import BackDrop from "../BackDrop/BackDrop";
 
 const Sidebar = () => {
   const navigate = useNavigate();
@@ -71,6 +72,7 @@ const Sidebar = () => {
           <img src={assets.profile} alt="profile" />
         </div>
       </div>
+      <BackDrop />
     </div>
   );
 };

@@ -4,6 +4,7 @@ import SearchBar from "../Searchbor/Searchbar";
 import Ticket from "../Ticket/Ticket";
 import { assets } from "../../assets/assets";
 import { AdminContext } from "../../Context/AdminContext";
+import BackDrop from "../BackDrop/BackDrop";
 
 const Dashboard = () => {
   const { tickets } = useContext(AdminContext);
@@ -85,6 +86,7 @@ const Dashboard = () => {
           <Ticket key={ticket._id} ticketData={ticket} />
         ))}
       </div>
+      <BackDrop />
     </div>
   );
 };
