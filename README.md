@@ -4,7 +4,7 @@
 
 1. **Clone the repository**  
    ```bash
-   git clone <repository-link>
+   gh repo clone Parveen020/Chatbot-System
    ```
 
 2. **Install dependencies**  
