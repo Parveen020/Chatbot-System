@@ -3,7 +3,7 @@ import { LineChart, Line, XAxis, ReferenceLine } from "recharts";
 import "./Analytics.css";
 import { assets } from "../../assets/assets";
 import { AdminContext } from "../../Context/AdminContext";
-import ChartAnalysis from "../../ChartAnalysis/ChartAnalysis";
+import ChartAnalysis from "../ChartAnalysis/ChartAnalysis";
 
 const Analytics = () => {
   const {
@@ -13,26 +13,6 @@ const Analytics = () => {
     totalTickets,
     missedChatsData,
   } = useContext(AdminContext);
-  // const missedChatsData = [
-  //   { week: "Week 1", value: 14 },
-  //   { week: "Week 2", value: 8 },
-  //   { week: "Week 3", value: 14 },
-  //   { week: "Week 4", value: 9 },
-  //   { week: "Week 5", value: 6 },
-  //   { week: "Week 6", value: 12 },
-  //   { week: "Week 7", value: 3 },
-  //   { week: "Week 8", value: 9 },
-  //   { week: "Week 9", value: 16 },
-  //   { week: "Week 10", value: 17 },
-  // ];
-
-  // Highlighted data points
-  // const highlightedPoints = [
-  //   { week: "Week 3", value: 14 },
-  //   { week: "Week 5", value: 12 },
-  //   { week: "Week 8", value: 9 },
-  //   { week: "Week 9", value: 16 },
-  // ];
 
   const resolvedPercentage =
     totalTickets > 0 ? (resolvedCount / totalTickets) * 100 : 0;
@@ -42,7 +22,6 @@ const Analytics = () => {
     <div className="analytics-container">
       <h1>Analytics</h1>
 
-      {/* Missed Chats Section */}
       <div className="section">
         <h2 className="section-title">Missed Chats</h2>
         <div className="chart-container">
@@ -50,7 +29,6 @@ const Analytics = () => {
         </div>
       </div>
 
-      {/* Average Reply Time Section */}
       <div className="section flex-section">
         <div className="section-content">
           <h2 className="section-title">Average Reply time</h2>
@@ -67,7 +45,6 @@ const Analytics = () => {
         </div>
       </div>
 
-      {/* Resolved Tickets Section */}
       <div className="section flex-section">
         <div className="section-content">
           <h2 className="section-title">Resolved Tickets</h2>
@@ -100,7 +77,7 @@ const Analytics = () => {
               transform="rotate(-90 50 50)"
             />
           </svg>
-          <div className="progress-value">{resolvedPercentage}%</div>
+          <div className="progress-value">{resolvedPercentage.toFixed(2)}%</div>
         </div>
       </div>
 
