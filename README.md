@@ -99,7 +99,7 @@
 ## Video Tutorial/Demo 
 link - https://drive.google.com/file/d/1x8yrNkfAzbCeAoQh53FAWO7RgwAkCSdm/view?usp=sharing
 
-## Wrking Site 
+## Working Site/Link 
 link - https://chatbot-system-frontend.onrender.com
 
 ---
