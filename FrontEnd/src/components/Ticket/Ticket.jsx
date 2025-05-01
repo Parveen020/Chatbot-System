@@ -15,7 +15,7 @@ const Ticket = ({ ticketData }) => {
           <div
             className={`status-indicator ${status === "resolved" ? "resolved" : "unresolved"}`}
           ></div>
-          <span className="ticket-id">Ticket# {ticketData.ticketId}</span>
+          <span className="ticket-id">Ticket# {ticketData.ticketId.substring(0, 10)}</span>
         </div>
         <p className="missed-status">{ticketData.isMissed ? "Missed" : ""}</p>
         <div className="ticket-time">
