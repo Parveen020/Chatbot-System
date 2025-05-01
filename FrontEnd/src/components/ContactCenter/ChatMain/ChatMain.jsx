@@ -24,7 +24,7 @@ const ChatMain = ({ selectedChat }) => {
   return (
     <div className="chat-box">
       <div className="chat-title">
-        <p>Ticket# {selectedChat.ticketId}</p>
+        <p>Ticket# {selectedChat.ticketId.substring(0, 10)}</p>
         <img src={assets.home} alt="home" />
       </div>
 
