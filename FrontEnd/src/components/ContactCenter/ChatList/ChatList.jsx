@@ -1,7 +1,6 @@
 import React from "react";
 import "./ChatList.css";
 import { assets } from "../../../assets/assets";
-import BackDrop from "../../BackDrop/BackDrop";
 
 const ChatList = ({ chats, selectedChat, handleChatClick }) => {
   return (
@@ -37,7 +36,6 @@ const ChatList = ({ chats, selectedChat, handleChatClick }) => {
           <div className="no-chats">No chats available</div>
         )}
       </div>
-      <BackDrop />
     </div>
   );
 };

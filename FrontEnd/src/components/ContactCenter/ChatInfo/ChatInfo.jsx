@@ -4,7 +4,6 @@ import "./ChatInfo.css";
 import { assets } from "../../../assets/assets";
 import { AdminContext } from "../../../Context/AdminContext";
 import WarningBox from "../Warning/WarningBox";
-import BackDrop from "../../BackDrop/BackDrop";
 
 const ChatInfo = ({ selectedChat }) => {
   const {
@@ -166,7 +165,6 @@ const ChatInfo = ({ selectedChat }) => {
         onConfirm={confirmStatusChange}
         message="Chat will be closed"
       />
-      <BackDrop />
     </div>
   );
 };

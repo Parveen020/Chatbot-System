@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useRef } from "react";
 import "./ChatWindow.css";
 import { assets } from "../../assets/assets";
 import { AdminContext } from "../../Context/AdminContext";
-import BackDrop from "../BackDrop/BackDrop";
 
 const ChatWindow = ({ messages, selectedChat, user }) => {
   const { formatDate } = useContext(AdminContext);
@@ -59,7 +58,6 @@ const ChatWindow = ({ messages, selectedChat, user }) => {
           <p>No messages in this conversation yet</p>
         </div>
       )}
-      <BackDrop />
     </div>
   );
 };

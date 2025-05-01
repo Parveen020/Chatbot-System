@@ -10,7 +10,6 @@ export const AdminContext = createContext(null);
 const AdminContextProvider = (props) => {
   const navigate = useNavigate();
   const url = "http://localhost:4000";
-  const [isLoading, setIsLoading] = useState(false);
   const [isLogin, setIsLogin] = useState(true);
   const [token, setToken] = useState("");
   const [adminDetails, setAdminDetails] = useState({
@@ -227,9 +226,7 @@ const AdminContextProvider = (props) => {
 
   const handleLoginSubmit = async () => {
     try {
-      setIsLoading(true);
       try {
-        setIsLoading(true);
         const response = await axios.post(`${url}/admin/login`, loginData);
 
         localStorage.setItem("token", response.data.token);
@@ -253,8 +250,6 @@ const AdminContextProvider = (props) => {
         return;
       } catch (adminError) {
         console.log("Admin login failed, trying team member login");
-      } finally {
-        setIsLoading(false);
       }
 
       const memberResponse = await axios.post(
@@ -286,8 +281,6 @@ const AdminContextProvider = (props) => {
         "Login error:",
         error.response?.data?.message || error.message
       );
-    } finally {
-      setIsLoading(false);
     }
   };
 
@@ -298,7 +291,6 @@ const AdminContextProvider = (props) => {
       password: registerData.password,
     };
     try {
-      setIsLoading(true);
       const response = await axios.post(
         `${url}/admin/register`,
         apiRegisterData
@@ -310,13 +302,10 @@ const AdminContextProvider = (props) => {
       }
     } catch (error) {
       console.error("Error during registration:", error);
-    } finally {
-      setIsLoading(false);
     }
   };
 
   const logout = () => {
-    setIsLoading(true);
     localStorage.removeItem("token");
     setAdminDetails({
       firstName: "",
@@ -335,8 +324,8 @@ const AdminContextProvider = (props) => {
       termsAccepted: false,
     });
     localStorage.removeItem("adminDetails");
+
     navigate("/");
-    setIsLoading(false);
   };
 
   const handleUpdate = (e) => {
@@ -349,7 +338,6 @@ const AdminContextProvider = (props) => {
       return handleMemberUpdateSubmit();
     }
     try {
-      setIsLoading(true);
       const response = await axios.put(
         `${url}/admin/updateProfile`,
         adminDetails,
@@ -369,8 +357,6 @@ const AdminContextProvider = (props) => {
       }
     } catch (error) {
       console.error("Error updating profile:", error);
-    } finally {
-      setIsLoading(false);
     }
   };
 
@@ -380,6 +366,7 @@ const AdminContextProvider = (props) => {
       firstName: adminDetails.firstName,
       lastName: adminDetails.lastName,
       email: adminDetails.email,
+      // Map password fields correctly
       newPassword: adminDetails.password,
       confirmPassword: adminDetails.confirmPassword,
     };
@@ -387,11 +374,11 @@ const AdminContextProvider = (props) => {
     console.log("Sending update data:", memberUpdateData);
 
     try {
-      setIsLoading(true);
       const response = await axios.put(
         `${url}/member/memberUpdate/${adminDetails.id}`,
         memberUpdateData,
         {
+          // Add the authorization header
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -409,14 +396,11 @@ const AdminContextProvider = (props) => {
     } catch (error) {
       console.error("Error updating profile:", error.response?.data || error);
       alert(error.response?.data?.message || "Something went wrong!");
-    } finally {
-      setIsLoading(false);
     }
   };
 
   const fetchTeamMembers = async () => {
     try {
-      setIsLoading(true);
       const response = await axios.get(`${url}/admin/getTeamMembers`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -434,8 +418,6 @@ const AdminContextProvider = (props) => {
       }
     } catch (err) {
       console.error("Error fetching team members:", err);
-    } finally {
-      setIsLoading(false);
     }
   };
 
@@ -457,7 +439,6 @@ const AdminContextProvider = (props) => {
 
   const confirmDelete = async () => {
     try {
-      setIsLoading(true);
       const response = await axios.delete(
         `${url}/admin/deleteTeamMember/${memberToDelete}`,
         {
@@ -481,7 +462,6 @@ const AdminContextProvider = (props) => {
     } finally {
       setShowDeleteModal(false);
       setMemberToDelete(null);
-      setIsLoading(false);
     }
   };
 
@@ -498,7 +478,6 @@ const AdminContextProvider = (props) => {
     }
 
     try {
-      setIsLoading(true);
       const response = await axios.post(
         `${url}/admin/addTeamMember`,
         {
@@ -529,8 +508,6 @@ const AdminContextProvider = (props) => {
       }
     } catch (err) {
       console.error("Error adding team member:", err);
-    } finally {
-      setIsLoading(false);
     }
   };
 
@@ -541,7 +518,6 @@ const AdminContextProvider = (props) => {
     }
 
     try {
-      setIsLoading(true);
       const response = await axios.put(
         `${url}/admin/updateTeamMember/${memberToEdit}`,
         {
@@ -577,8 +553,6 @@ const AdminContextProvider = (props) => {
       }
     } catch (err) {
       console.error("Error updating team member:", err);
-    } finally {
-      setIsLoading(false);
     }
   };
 
@@ -601,7 +575,6 @@ const AdminContextProvider = (props) => {
 
   const handleSaveSettings = async () => {
     try {
-      setIsLoading(true);
       const response = await axios.put(
         `${url}/chatbot-setting/update-chat-setting`,
         chatbotSettings,
@@ -616,14 +589,11 @@ const AdminContextProvider = (props) => {
       console.log("Settings successfully updated:", updatedSettings);
     } catch (error) {
       console.error("Error saving settings:", error);
-    } finally {
-      setIsLoading(false);
     }
   };
 
   const getSettingsFromDatabase = async () => {
     try {
-      setIsLoading(true);
       const response = await axios.get(
         `${url}/chatbot-setting/get-chat-setting`
       );
@@ -639,8 +609,6 @@ const AdminContextProvider = (props) => {
       }));
     } catch (error) {
       console.error("Error fetching settings:", error);
-    } finally {
-      setIsLoading(false);
     }
   };
 
@@ -696,7 +664,6 @@ const AdminContextProvider = (props) => {
 
   const fetchChats = async () => {
     try {
-      setIsLoading(true);
       const res = await axios.get(`${url}/chat/getAllChats/${adminDetails.id}`);
       setChats(res.data);
       if (selectedChat) {
@@ -709,8 +676,6 @@ const AdminContextProvider = (props) => {
       }
     } catch (err) {
       console.error("Error fetching chats", err);
-    } finally {
-      setIsLoading(false);
     }
   };
 
@@ -781,7 +746,6 @@ const AdminContextProvider = (props) => {
 
   const assignChat = async (chatId, newAssigneeId, token) => {
     try {
-      setIsLoading(true);
       const res = await axios.put(
         `${url}/chat/${chatId}/assign`,
         { newAssigneeId },
@@ -791,14 +755,12 @@ const AdminContextProvider = (props) => {
     } catch (err) {
       console.error("Error assigning chat:", err);
       return { error: err.response?.data?.error || "Something went wrong" };
-    } finally {
-      setIsLoading(false);
     }
   };
 
   const changeStatus = async (chatId, status, token) => {
+    console.log(status);
     try {
-      setIsLoading(true);
       const res = await axios.put(
         `${url}/chat/${chatId}/status`,
         { status },
@@ -808,14 +770,12 @@ const AdminContextProvider = (props) => {
     } catch (err) {
       console.error("Error changing status:", err);
       return { error: err.response?.data?.error || "Something went wrong" };
-    } finally {
-      setIsLoading(false);
     }
   };
 
   const sendMessage = async (chatId, content, senderType, senderName) => {
     try {
-      setIsLoading(true);
+      console.log("token-", chatId);
       const res = await axios.post(`${url}/chat/sendMessage/${chatId}`, {
         content,
         senderType,
@@ -826,8 +786,6 @@ const AdminContextProvider = (props) => {
     } catch (err) {
       console.error("Error sending message:", err);
       return { error: err.response?.data?.error || "Something went wrong" };
-    } finally {
-      setIsLoading(false);
     }
   };
 
@@ -835,7 +793,6 @@ const AdminContextProvider = (props) => {
     if (!newMsg.trim()) return;
 
     try {
-      setIsLoading(true);
       const response = await sendMessage(
         selectedChat._id,
         newMsg,
@@ -851,8 +808,6 @@ const AdminContextProvider = (props) => {
       }
     } catch (error) {
       console.error("Error sending message:", error);
-    } finally {
-      setIsLoading(false);
     }
   };
 
@@ -870,14 +825,11 @@ const AdminContextProvider = (props) => {
 
   const fetchMessages = async (chatId) => {
     try {
-      setIsLoading(true);
       const res = await axios.get(`${url}/chat/fetchMessages/${chatId}`);
       return res.data.messages;
     } catch (error) {
       console.error("Error fetching messages:", error);
       return [];
-    } finally {
-      setIsLoading(false);
     }
   };
 
@@ -903,7 +855,6 @@ const AdminContextProvider = (props) => {
 
   const handleCreateChat = async () => {
     try {
-      setIsLoading(true);
       if (!createFormData.name || !createFormData.email) {
         alert("Name and email are required!");
         return;
@@ -923,8 +874,6 @@ const AdminContextProvider = (props) => {
     } catch (error) {
       console.error("Error creating chat:", error);
       alert("Failed to create chat. Please try again.");
-    } finally {
-      setIsLoading(false);
     }
   };
 
@@ -932,7 +881,7 @@ const AdminContextProvider = (props) => {
     if (!newMsg.trim()) return;
 
     try {
-      setIsLoading(true);
+      console.log("a=", savedChatId, newMsg, "user", createFormData.name);
       const response = await sendMessage(
         savedChatId,
         newMsg,
@@ -947,8 +896,6 @@ const AdminContextProvider = (props) => {
       }
     } catch (error) {
       console.error("Error sending message:", error);
-    } finally {
-      setIsLoading(false);
     }
   };
 
@@ -962,21 +909,17 @@ const AdminContextProvider = (props) => {
 
   const retrieveChats = async () => {
     try {
-      setIsLoading(true);
       const response = await axios.get(`${url}/chat/retrieveChats`);
       if (response.data.success) {
         setTickets(response.data.chats);
       }
     } catch (error) {
       console.error("Error sending message:", error);
-    } finally {
-      setIsLoading(false);
     }
   };
 
   const fetchSingleChat = async (chatId) => {
     try {
-      setIsLoading(true);
       const response = await axios.get(`${url}/chat/fetchSingleChat/${chatId}`);
       if (response.data.success) {
         console.log(response.data);
@@ -985,16 +928,12 @@ const AdminContextProvider = (props) => {
       }
     } catch (error) {
       console.error("Error sending message:", error);
-    } finally {
-      setIsLoading(false);
     }
   };
 
   const getAssigneeNameById = async (id) => {
     try {
-      setIsLoading(true);
       try {
-        setIsLoading(true);
         const teamResponse = await axios.get(`${url}/member/memberName/${id}`);
         if (teamResponse.data && teamResponse.data.name) {
           return teamResponse.data.name;
@@ -1015,8 +954,6 @@ const AdminContextProvider = (props) => {
         error.response?.data || error.message
       );
       return null;
-    } finally {
-      setIsLoading(false);
     }
   };
 

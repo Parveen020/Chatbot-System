@@ -4,7 +4,8 @@ import "./Analytics.css";
 import { assets } from "../../assets/assets";
 import { AdminContext } from "../../Context/AdminContext";
 import ChartAnalysis from "../ChartAnalysis/ChartAnalysis";
-import BackDrop from "../BackDrop/BackDrop";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 
 const Analytics = () => {
   const {
@@ -92,7 +93,6 @@ const Analytics = () => {
         </div>
         <div className="total-value">{totalTickets} Chats</div>
       </div>
-      <BackDrop />
     </div>
   );
 };

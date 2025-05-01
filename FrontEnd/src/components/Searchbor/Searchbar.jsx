@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./Searchbar.css";
 import { assets } from "../../assets/assets";
-import BackDrop from "../BackDrop/BackDrop";
 
 const Searchbar = ({ onSearch }) => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -25,7 +24,6 @@ const Searchbar = ({ onSearch }) => {
           onChange={handleSearchChange}
         />
       </div>
-      <BackDrop />
     </div>
   );
 };

@@ -2,7 +2,6 @@ import React from "react";
 import "./Logo.css";
 import { assets } from "../../assets/assets";
 import { useNavigate } from "react-router-dom";
-import BackDrop from "../BackDrop/BackDrop";
 
 const Logo = () => {
   const navigate = useNavigate();
@@ -12,7 +11,6 @@ const Logo = () => {
       <p className="logo-title" onClick={() => navigate("/")}>
         Hubly
       </p>
-      <BackDrop />
     </div>
   );
 };

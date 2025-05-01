@@ -4,7 +4,6 @@ import ChatList from "./ChatList/ChatList";
 import ChatInfo from "./ChatInfo/ChatInfo";
 import ChatMain from "./ChatMain/ChatMain";
 import { AdminContext } from "../../Context/AdminContext";
-import BackDrop from "../BackDrop/BackDrop";
 
 const ContactCenter = () => {
   const { chats, selectedChat, handleChatClick } = useContext(AdminContext);
@@ -17,7 +16,6 @@ const ContactCenter = () => {
       />
       <ChatMain selectedChat={selectedChat} />
       <ChatInfo selectedChat={selectedChat} />
-      <BackDrop />
     </div>
   );
 };

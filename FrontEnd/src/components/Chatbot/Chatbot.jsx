@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect, useContext } from "react";
 import "./Chatbot.css";
 import { assets } from "../../assets/assets";
 import { AdminContext } from "../../Context/AdminContext";
-import BackDrop from "../BackDrop/BackDrop";
 
 const Chatbot = () => {
   const {
@@ -278,7 +277,6 @@ const Chatbot = () => {
           </div>
         </div>
       </div>
-      <BackDrop />
     </div>
   );
 };

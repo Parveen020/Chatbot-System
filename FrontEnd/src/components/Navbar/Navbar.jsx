@@ -3,7 +3,6 @@ import "./Navbar.css";
 import { NavLink, useNavigate } from "react-router-dom";
 import { assets } from "../../assets/assets.js";
 import Logo from "../Logo/Logo.jsx";
-import BackDrop from "../BackDrop/BackDrop.jsx";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -27,7 +26,6 @@ const Navbar = () => {
           Sign up
         </button>
       </div>
-      <BackDrop />
     </div>
   );
 };

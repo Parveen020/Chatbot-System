@@ -2,7 +2,6 @@ import React, { useContext, useState } from "react";
 import "./Team.css";
 import { assets } from "../../assets/assets";
 import { AdminContext } from "../../Context/AdminContext";
-import BackDrop from "../BackDrop/BackDrop";
 
 const Team = () => {
   const {
@@ -279,7 +278,6 @@ const Team = () => {
           </div>
         </div>
       )}
-      <BackDrop />
     </div>
   );
 };

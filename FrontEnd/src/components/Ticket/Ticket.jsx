@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import "./Ticket.css";
 import { assets } from "../../assets/assets";
 import { AdminContext } from "../../Context/AdminContext";
-import BackDrop from "../BackDrop/BackDrop";
 
 const Ticket = ({ ticketData }) => {
   const { fetchSingleChat } = useContext(AdminContext);
@@ -53,7 +52,6 @@ const Ticket = ({ ticketData }) => {
           Open Ticket
         </button>
       </div>
-      <BackDrop />
     </div>
   );
 };

@@ -3,7 +3,8 @@ import { assets } from "../../../assets/assets";
 import "./ChatMain.css";
 import { AdminContext } from "../../../Context/AdminContext";
 import ChatWindow from "../../ChatWindow/ChatWindow";
-import BackDrop from "../../BackDrop/BackDrop";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 
 const ChatMain = ({ selectedChat }) => {
   const {
@@ -25,7 +26,7 @@ const ChatMain = ({ selectedChat }) => {
   return (
     <div className="chat-box">
       <div className="chat-title">
-        <p>Ticket# {selectedChat.ticketId.substring(0, 10)}</p>
+        <p>Ticket# {selectedChat.ticketId}</p>
         <img src={assets.home} alt="home" />
       </div>
 
@@ -48,7 +49,6 @@ const ChatMain = ({ selectedChat }) => {
         ></textarea>
         <button onClick={handleSendMessage}>➤</button>
       </div>
-      <BackDrop />
     </div>
   );
 };

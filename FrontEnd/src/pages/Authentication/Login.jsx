@@ -3,7 +3,6 @@ import "./Login.css";
 import { assets } from "../../assets/assets";
 import Logo from "../../components/Logo/Logo";
 import { AdminContext } from "../../Context/AdminContext";
-import BackDrop from "../../components/BackDrop/BackDrop";
 
 const Login = () => {
   const {
@@ -152,7 +151,6 @@ const Login = () => {
       <div className="login-right">
         <img src={assets.loginImage} alt="" />
       </div>
-      <BackDrop />
     </div>
   );
 };
