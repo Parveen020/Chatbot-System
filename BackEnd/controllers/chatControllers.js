@@ -54,7 +54,7 @@ const getAllChat = async (req, res) => {
 
 const createChat = async (req, res) => {
   try {
-    const { name, email, phone, id } = req.body;
+    const { name, email, phone } = req.body;
 
     if (!name || !email) {
       return res.status(400).json({ error: "Name and email are required." });
@@ -70,9 +70,32 @@ const createChat = async (req, res) => {
     const randomIndex = Math.floor(Math.random() * admins.length);
     const selectedAdmin = admins[randomIndex];
 
+    const latestChat = await ChatModel.findOne().sort({ chatNumber: -1 });
+
+    const lastNumber =
+      latestChat && typeof latestChat.chatNumber === "number"
+        ? latestChat.chatNumber
+        : 0;
+    const nextChatNumber = lastNumber + 1;
+
+    if (isNaN(nextChatNumber)) {
+      return res
+        .status(500)
+        .json({ error: "Invalid chat number calculation." });
+    }
+
+    const ticketId = `${new Date().getFullYear()}-0${String(new Date().getDate()).padStart(2, "0")}${String(new Date().getMonth() + 1).padStart(2, "0")}-${String(nextChatNumber).padStart(5, "0")}`;
+
+    const existingChat = await ChatModel.findOne({ ticketId: ticketId });
+    if (existingChat) {
+      return res.status(400).json({ error: "Duplicate ticketId, try again." });
+    }
+
     const newChat = new ChatModel({
+      ticketId: ticketId,
       customer: { name, email, phone },
       assigned: selectedAdmin._id,
+      chatNumber: nextChatNumber,
     });
 
     await newChat.save();
@@ -84,7 +107,7 @@ const createChat = async (req, res) => {
     });
   } catch (error) {
     console.error("Error creating chat:", error);
-    res.status(500).json({ error: "Internal server error" });
+    res.status(500).json({ error: error.message });
   }
 };
 

@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import TicketCounterModel from "./TicketCounterModel.js";
 
 const messageSchema = new mongoose.Schema({
   senderName: { type: String, required: true },
@@ -12,12 +13,26 @@ const ChatSchema = new mongoose.Schema(
     ticketId: {
       type: String,
       required: true,
-      default: function () {
+      default: async function () {
         const now = new Date();
         const year = now.getFullYear();
         const date = String(now.getDate()).padStart(2, "0");
         const month = String(now.getMonth() + 1).padStart(2, "0");
-        return `${year}-0${date}${month}`;
+        const dateStr = `${year}-0${date}${month}`;
+
+        let ticketCounter = await TicketCounterModel.findOne({ date: dateStr });
+        if (!ticketCounter) {
+          ticketCounter = new TicketCounterModel({ date: dateStr });
+          await ticketCounter.save();
+        }
+        ticketCounter.counter++;
+        await ticketCounter.save();
+
+        const paddedTicketNumber = String(ticketCounter.counter).padStart(
+          3,
+          "0"
+        );
+        return `${dateStr}${paddedTicketNumber}`;
       },
     },
     messages: [messageSchema],
@@ -51,7 +66,7 @@ const ChatSchema = new mongoose.Schema(
   }
 );
 
-ChatSchema.pre("save", function (next) {
+ChatSchema.pre("save", async function (next) {
   if (this.replyTime && this.postedTime) {
     const elapsedMs = this.replyTime.getTime() - this.postedTime.getTime();
     const elapsedSeconds = Math.floor(elapsedMs / 1000);
