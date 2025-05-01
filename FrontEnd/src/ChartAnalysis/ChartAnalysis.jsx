@@ -1,4 +1,4 @@
-import { AdminContext } from "../Context/adminContext";
+import { AdminContext } from "../Context/AdminContext";
 import "./ChartAnalysis.css";
 import React, { useContext } from "react";
 import {
