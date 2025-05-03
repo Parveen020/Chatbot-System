@@ -9,7 +9,7 @@ export const AdminContext = createContext(null);
 
 const AdminContextProvider = (props) => {
   const navigate = useNavigate();
-  const url = "http://localhost:4000";
+  const url = "https://chatbot-system-backend.onrender.com";
   const [isLogin, setIsLogin] = useState(true);
   const [token, setToken] = useState("");
   const [adminDetails, setAdminDetails] = useState({
